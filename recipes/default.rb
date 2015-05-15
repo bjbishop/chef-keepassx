@@ -42,6 +42,7 @@ mykeepassess.app
   link app do
     target_file ::File.join(home, "Applications", app)
     to ::File.join(home, "Google\ Drive", "keepassx", app)
+    owner me
   end
 end
 
