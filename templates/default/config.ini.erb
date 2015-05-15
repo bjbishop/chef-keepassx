@@ -1,0 +1,70 @@
+[Options]
+ShowSysTrayIcon=false
+MinimizeToTray=false
+MinimizeTray=false
+StartMinimized=false
+StartLocked=false
+SaveFileDlgHistory=true
+GroupTreeState=ExpandAll
+OpenLastFile=true
+RememberLastKey=true
+AskBeforeDelete=true
+Backup=true
+BackupDelete=true
+BackupDeleteAfter=14
+AutoSave=false
+AutoSaveChange=true
+BannerColor1="0,85,127"
+BannerColor2="0,117,175"
+BannerTextColor="222,222,222"
+AlternatingRowColors=true
+Language=auto
+ClipboardTimeOut=20
+ShowPasswords=false
+ShowPasswordsPasswordDlg=false
+LockOnMinimize=false
+LockOnInactivity=false
+LockAfterSec=30
+UrlCmdDef=true
+UrlCmd=
+MountDir=/Volumes/
+SaveRelativePaths=true
+AutoTypePreGap=500
+AutoTypeKeyStrokeDelay=5
+GlobalShortcutKey=107
+GlobalShortcutMods=@Variant(\0\0\0\r\0\0\0\x5\x11)
+EntryTitlesMatch=true
+LastKeyLocation=/key2
+LastKeyType=Composite
+LastFile=./../..<%= ::Dir.home(node['current_user']) %>/gdrive/work-keypass.kdb
+SearchOptions=001111110
+
+[UI]
+AlwaysOnTop=false
+EditEntryDialogSize=@Size(1053 827)
+MainWindowGeometry=@ByteArray(\x1\xd9\xd0\xcb\0\x1\0\0\0\0\x1\xf7\0\0\0^\0\0\x5$\0\0\x3\x61\0\0\x1\xf7\0\0\0\x96\0\0\x5$\0\0\x3\x61\0\0\0\0\0\0)
+VSplitterPos=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x2\0\0\0\xd8\0\0\x4\xa9\x1\0\0\0\a\x1\0\0\0\x1)
+HSplitterPos=@ByteArray(\0\0\0\xff\0\0\0\0\0\0\0\x2\0\0\x1\xb7\0\0\x1i\x1\0\0\0\a\x1\0\0\0\x2)
+ShowStatusbar=true
+Columns=11111000000
+ColumnOrder="0,1,2,3,4,5,6,7,8,9,10"
+ColumnSizes="129,129,129,129,129,129,129,129,129,129,129"
+ColumnSort=0
+ColumnSortOrder=0
+SearchColumns=11110000001
+SearchColumnOrder="1,2,3,4,5,6,7,8,9,10,0"
+SearchColumnSizes="238,238,238,238,238,238,238,238,238,238,238"
+SearchColumnSort=0
+SearchColumnSortOrder=0
+
+[FileDlgHistory]
+ENTRY0=MainWindow_FileOpen, <%= ::Dir.home(node['current_user']) %>/Dropbox/, 0
+ENTRY1=MainWindow_FileSave, , 0
+ENTRY2=PasswordDlg, <%= ::Dir.home(node['current_user']) %>/Documents/, 0
+
+[Bookmarks]
+1\Title=Work
+1\Path=<%= ::Dir.home(node['current_user']) %>/Google Drive/work-keypass.kdb
+size=2
+2\Title=Personal
+2\Path=<%= ::Dir.home(node['current_user']) %>/Dropbox/personal-keepass.kdb
