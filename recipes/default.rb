@@ -41,7 +41,7 @@ end
 link "keepass app" do
   action :create
   target_file ::File.join(::Dir.home(node['current_user']), "Applications", "KeePassX.app")
-  to ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", "KeePassX")
+  to ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", "KeePassX.app")
 end
 
 %w(
