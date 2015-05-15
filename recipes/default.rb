@@ -7,7 +7,7 @@ end
 
 Chef::Log.info "\n\n\n\Google Drive appears to be enabled.\n\n\n"
 
-directory "Applications" do
+directory ::File.join(::Dir.home(me), "Applications") do
   mode "0700"
   owner me
   group me
