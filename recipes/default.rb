@@ -59,6 +59,7 @@ work.keyfile
   link "secret key files: #{key}" do
     target_file ::File.join(home, key)
     to ::File.join(home, "Google\ Drive", "keepassx", key)
+    owner me
   end
 end
 
