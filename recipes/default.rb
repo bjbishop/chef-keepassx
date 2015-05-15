@@ -44,6 +44,13 @@ link "keepass app" do
   to ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", "KeePassX.app")
 end
 
+file ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", "KeePassX.app", "Contents", "MacOS", "KeePassX") do
+  action :touch
+  owner node['current_user']
+  group node['current_user']
+  mode "0755"
+end
+
 %w(
 personal.keyfile
 work.keyfile
