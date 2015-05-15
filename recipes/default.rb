@@ -5,18 +5,17 @@ end
 
 Chef::Log.info "\n\n\n\Google Drive appears to be enabled.\n\n\n"
 
-default_owner = {  :owner => node['current_user'], :group => node['current_user'] }
-
 directory "Applications" do
-  path ::File.join(::Dir.home(node['current_user']), "Applications")
-  default_owner
   mode "0700"
+  owner node['current_user']
+  group node['current_user']
 end
 
 directory ".keepassx" do
   path ::File.join(::Dir.home(node['current_user']), ".keepassx")
-  default_owner
   mode "0700"
+  owner node['current_user']
+  group node['current_user']
 end
 
 %w(
@@ -28,7 +27,8 @@ work-config.ini
     path ::File.join(::Dir.home(node['current_user']), ".keepassx", config)
     source "#{config}.erb"
     mode "0644"
-    default_owner
+    owner node['current_user']
+    group node['current_user']
   end
 end
 
@@ -44,8 +44,9 @@ end
 
 file ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", "KeePassX.app", "Contents", "MacOS", "KeePassX") do
   action :touch
-  default_owner
   mode "0755"
+  owner node['current_user']
+  group node['current_user']
 end
 
 %w(
@@ -61,6 +62,7 @@ end
 file "mykeepasses.sh" do
   action :touch
   path ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", "mykeepasses.sh")
-  default_owner
   mode "0755"
+  owner node['current_user']
+  group node['current_user']
 end
