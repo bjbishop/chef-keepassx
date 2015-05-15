@@ -38,10 +38,15 @@ work-config.ini
   end
 end
 
-link "keepass app" do
-  action :create
-  target_file ::File.join(::Dir.home(node['current_user']), "Applications", "KeePassX.app")
-  to ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", "KeePassX.app")
+%w(
+KeePassX.app
+mykeepassess.app
+).each do |app|
+  link app do
+    action :create
+    target_file ::File.join(::Dir.home(node['current_user']), "Applications", app)
+    to ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", app)
+  end
 end
 
 file ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", "KeePassX.app", "Contents", "MacOS", "KeePassX") do
