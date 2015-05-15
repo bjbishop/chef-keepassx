@@ -5,6 +5,15 @@ end
 
 Chef::Log.info "\n\n\n\Google Drive appears to be enabled.\n\n\n"
 
+directory "Applications" do
+  action :create
+  path ::File.join(::Dir.home(node['current_user']), "Applications")
+  owner node['current_user']
+  group node['current_user']
+  mode "0700"
+  recursive false
+end
+
 directory ".keepassx" do
   action :create
   path ::File.join(::Dir.home(node['current_user']), ".keepassx")
