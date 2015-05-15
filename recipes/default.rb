@@ -40,11 +40,11 @@ mykeepassess.app
 ).each do |app|
   link app do
     target_file ::File.join(::Dir.home(me), "Applications", app)
-    to ::File.join(::Dir.home(me), "Google Drive", "keepassx", app)
+    to ::File.join(::Dir.home(me), "Google\ Drive", "keepassx", app)
   end
 end
 
-file ::File.join(::Dir.home(me), "Google Drive", "keepassx", "KeePassX.app", "Contents", "MacOS", "KeePassX") do
+file ::File.join(::Dir.home(me), "Google\ Drive", "keepassx", "KeePassX.app", "Contents", "MacOS", "KeePassX") do
   action :touch
   mode "0755"
   owner me
@@ -57,13 +57,13 @@ work.keyfile
 ).each do |key|
   link "secret key files: #{key}" do
     target_file ::File.join(::Dir.home(me), key)
-    to ::File.join(::Dir.home(me), "Google Drive", "keepassx", key)
+    to ::File.join(::Dir.home(me), "Google\ Drive", "keepassx", key)
   end
 end
 
 file "mykeepasses.sh" do
   action :touch
-  path ::File.join(::Dir.home(me), "Google Drive", "keepassx", "mykeepasses.sh")
+  path ::File.join(::Dir.home(me), "Google\ Drive", "keepassx", "mykeepasses.sh")
   mode "0755"
   owner me
   group me
