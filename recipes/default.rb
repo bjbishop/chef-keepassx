@@ -14,11 +14,34 @@ directory ".keepassx" do
   recursive false
 end
 
-template "config.ini" do
-  action :create
-  source "config.ini.erb"
-  mode "0644"
-  owner node['current_user']
-  group node['current_user']
+%w(
+config.ini
+personal-config.ini
+work-config.ini
+).each do |config|
+  template config do
+    action :create
+    path ::File.join(::Dir.home(node['current_user']), ".keepassx", config)
+    source "#{config}.erb"
+    mode "0644"
+    owner node['current_user']
+    group node['current_user']
+  end
 end
 
+link "keepass app" do
+  action :create
+  target_file ::File.join(::Dir.home(node['current_user']), "Applications", "KeePassX.app")
+  to ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", "KeePassX")
+end
+
+%w(
+personal.keyfile
+work.keyfile
+).each do |key|
+  link "secret key files: #{key}" do
+    action :create
+    target_file ::File.join(::Dir.home(node['current_user']), key)
+    to ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", key)
+  end
+end
