@@ -66,3 +66,11 @@ work.keyfile
     to ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", key)
   end
 end
+
+file "mykeepasses.sh" do
+  action :touch
+  path ::File.join(::Dir.home(node['current_user']), "Google Drive", "keepassx", "mykeepasses.sh")
+  owner node['current_user']
+  group node['current_user']
+  mode "0755"
+end
